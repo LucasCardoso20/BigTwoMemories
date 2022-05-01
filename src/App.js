@@ -35,16 +35,11 @@ function App() {
   return (
     <>
     <header className="header">
-      
-
       <div className='nav__container'>
-        
-
         <div className='logo'><img src={logo} className="logo__img"/></div>    
-
         <ul className='nav__list'>
         {data.map((item, index)=> (
-          <>
+          
             <li 
               key={index}
               onClick={()=> handleContentFilter(item.categoryName)}
@@ -52,7 +47,7 @@ function App() {
             >
               {item.categoryName}
             </li>
-          </>
+        
           ))}
         </ul>
 
@@ -114,8 +109,8 @@ function App() {
             </div>
             <div className="card-body">
               <div className='card__code'>
-                {content.tags.map((tag)=> {
-                  return <span className=
+                {content.tags.map((tag, index)=> {
+                  return <span key={index} className=
                   {`tag ${tag === 'Filmes' && 'tag-purple'} 
                   ${tag === 'Todos' && 'tag-pink'}
                   ${tag === 'Já assistimos' && 'tag-green'}
