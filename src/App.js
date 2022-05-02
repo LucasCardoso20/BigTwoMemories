@@ -3,10 +3,10 @@ import {urlFor, client} from './client'
 import logo from './assets/bigtwo.png';
 import './App.scss';
 import './gallery.scss'
-import { data } from './assets/data';
+import { data } from './data'
 
 function App() {
-  const [activeFilter, setActiveFilter] = useState('Todos')
+  const [activeFilter, setActiveFilter] = useState('Home')
   const [content, setContent] = useState([])
   const [filterContent, setFilterContent] = useState([])
   const [toggle, setToggle] = useState(false)
@@ -16,8 +16,7 @@ function App() {
 
       client.fetch(query)
         .then((data)=> {
-            setContent(data)
-            setFilterContent(content.filter((content)=> content.tags.includes('Todos')))             
+            setContent(data)           
             setFilterContent(data)
             
         })
@@ -27,7 +26,11 @@ function App() {
       setActiveFilter(item)
 
       setTimeout(() => {
-        setFilterContent(content.filter((content)=> content.tags.includes(item)))    
+        if(item === 'Home'){
+          setFilterContent(content)
+        }else{
+          setFilterContent(content.filter((content)=> content.tags.includes(item)))    
+        }
       }, 500);
     }
 
@@ -111,9 +114,14 @@ function App() {
               <div className='card__code'>
                 {content.tags.map((tag, index)=> {
                   return <span key={index} className=
-                  {`tag ${tag === 'Filmes' && 'tag-purple'} 
-                  ${tag === 'Todos' && 'tag-pink'}
-                  ${tag === 'Já assistimos' && 'tag-green'}
+                  {`tag ${tag === 'Filmes' && 'tag-red'} 
+                  ${tag === 'Memories' && 'tag-purple'}
+                  ${tag === 'Memes' && 'tag-orange'}
+                  ${tag === 'Snapchat' && 'tag-yellow'}
+                  ${tag === 'Natureza' && 'tag-green'}
+                  ${tag === 'Desafio fotográfico' && 'tag-pink'}
+                  ${tag === 'Memes da internet' && 'tag-sea-blue'}
+                  ${tag === 'Memes da internet' && 'tag-dark-blue'}
                   `}         
                   >{tag}
                   </span>
