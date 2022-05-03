@@ -121,7 +121,7 @@ function App() {
                   ${tag === 'Natureza' && 'tag-green'}
                   ${tag === 'Desafio fotográfico' && 'tag-pink'}
                   ${tag === 'Memes da internet' && 'tag-sea-blue'}
-                  ${tag === 'Memes da internet' && 'tag-dark-blue'}
+                  ${tag === 'Bitmoji' && 'tag-dark-blue'}
                   `}         
                   >{tag}
                   </span>

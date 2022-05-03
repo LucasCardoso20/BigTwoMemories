@@ -88,9 +88,10 @@ body{
 	width: 100%;
   } */
   .card-header img {
-	width: 100%;
-	height: 240px;
-	object-fit: cover;
+    height: 450px;
+    object-fit: cover;
+    width: 100%;
+    min-width: 350px;
   }
   .card-body {
 	display: flex;
@@ -107,7 +108,7 @@ body{
   }
 
   .tag {
-	background: #cccccc;
+	background: #a8c030;
 	border-radius: 50px;
 	font-size: 12px;
 	margin: 0;
