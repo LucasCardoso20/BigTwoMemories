@@ -107,6 +107,22 @@ body{
     gap: 0.5rem
   }
 
+  .card__date{
+  
+    padding: 1rem;
+    margin-top: 0.8rem;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+
+    svg{
+      color: #db2777;
+      width: 25px;
+      height: 25px;
+    }
+  }
+
   .tag {
 	background: #a8c030;
 	border-radius: 50px;

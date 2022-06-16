@@ -1,5 +1,8 @@
 import React, {useState, useEffect} from 'react'
 import {urlFor, client} from './client'
+import Moment from 'react-moment'
+import moment from 'moment'
+import {AiOutlineCalendar} from 'react-icons/ai'
 import logo from './assets/bigtwo.png';
 import './App.scss';
 import './gallery.scss'
@@ -127,6 +130,9 @@ function App() {
                   </span>
                   })}              
               </div>
+              
+              <span className='card__date'><AiOutlineCalendar/>{content.data ? moment(content.data).format('ll') : ''} </span>
+              
               <h2>
                 {content.title}
               </h2>
